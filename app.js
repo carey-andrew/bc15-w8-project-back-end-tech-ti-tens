@@ -11,7 +11,7 @@ app.use(logger("dev"));
 // Retrieve the port number
 const PORT = process.env.PORT;
 
-// Endpoint to retrieve a specific artist by id
+// Endpoint to retrieve a specific question by id
 app.get("/quiz/:id", async function (req, res) {
   const id = req.params.id;
   const question = await getQuestionById(id);

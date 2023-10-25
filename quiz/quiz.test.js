@@ -34,18 +34,18 @@ test("Check health of app", async function () {
 });
 
 test("/quiz/:id", async () => {
-  //   await resetDatabase();
+  await resetDatabase();
   const response = await request(app)
-    .get("/api/quiz/1")
+    .get("/api/quiz/8")
     .set("Accept", "application/json");
-  //console.log(response.body)
   console.log(response.body);
-  expect(response.body.success).toEqual(true);
-  //      assert that response body.payload is an array
-  expect(response.body.payload.id).toBeTypeOf("number");
-  //          assert that user object.username is a string
-  expect(response.body.payload.statment).toBeTypeOf("string");
+
   expect(response.status).toEqual(200);
-  //Assert response header - should be json
-  expect(response.header["content-type"]).toMatch(/json/);
+  // Assert response header - should be JSON
+  expect(response.get("content-type")).toMatch(/json/);
+
+  // Check the structure and data types of the response
+  expect(response.body.status).toEqual("success");
+  expect(response.body.data.id).toBeTypeOf(Number);
+  expect(response.body.data.statement).toBeString();
 });

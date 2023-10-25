@@ -1,13 +1,13 @@
 import { pool } from "../index.js";
 
-async function resetDatabase() {
+export async function resetDatabase() {
   try {
     // Drop existing tables if they exist
     await pool.query(`
       DROP TABLE IF EXISTS quiz CASCADE;
     `);
 
-    // Create the artists table
+    // Create the quiz table
     await pool.query(`
       CREATE TABLE quiz (
         id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
@@ -19,13 +19,13 @@ async function resetDatabase() {
     // Seed the quiz table
     await pool.query(`
       INSERT INTO quiz (statement, answer)
-      VALUES 
-      ('HTML stands for Hyper Text Markup Language.', 'True'),
+      VALUES
+    ('HTML stands for Hyper Text Markup Language.', 'True'),
     ('HTML is a programming language.', 'False'),
     ('HTML is used for structuring the content of a web page.', 'True'),
     ('The HTML <div> element is used to define a hyperlink.', 'False'),
     ('HTML tags are not case-sensitive.', 'False'),
-    ('The <head> section of an HTML document typically contains metadata and links to external resources.', 'True'),
+    ('The head section of an HTML document typically contains metadata and links to external resources.', 'True'),
     ('HTML comments are visible on the web page when viewed in a web browser.', 'False'),
     ('CSS stands for Cascading Style Sheets.', 'True'),
     ('CSS is used to define the structure of a web page.', 'False'),
@@ -50,5 +50,3 @@ async function resetDatabase() {
     await pool.end();
   }
 }
-
-await resetDatabase();
