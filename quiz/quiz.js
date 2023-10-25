@@ -1,4 +1,4 @@
-import { pool } from "./db/index.js";
+import { pool } from "../../DB/index.js";
 
 // Creating a function to return a question/answer by ID
 export async function getQuestionById(id) {
