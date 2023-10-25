@@ -6,6 +6,8 @@ import { getQuestionById } from "./quiz/quiz.js";
 
 // Initialise the express app
 const app = express();
+// initialise morgan app
+app.use(logger("dev"));
 // Retrieve the port number
 const PORT = process.env.PORT;
 
