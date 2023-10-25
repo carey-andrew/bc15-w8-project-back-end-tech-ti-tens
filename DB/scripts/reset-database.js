@@ -26,14 +26,14 @@ async function resetDatabase() {
     ('The HTML <div> element is used to define a hyperlink.', 'False'),
     ('HTML tags are not case-sensitive.', 'False'),
     ('The <head> section of an HTML document typically contains metadata and links to external resources.', 'True'),
-    ('HTML comments are visible on the web page when viewed in a web browser.', 'False');
+    ('HTML comments are visible on the web page when viewed in a web browser.', 'False'),
     ('CSS stands for Cascading Style Sheets.', 'True'),
     ('CSS is used to define the structure of a web page.', 'False'),
     ('Inline styles take precedence over external styles in CSS.', 'True'),
     ('CSS can be applied to HTML elements using class and ID selectors.', 'True'),
     ('The box model in CSS consists of content, padding, border, and margin.', 'True'),
     ('CSS Flexbox is used for creating two-dimensional layouts.', 'True'),
-    ('Media queries in CSS are used for making web pages responsive to different screen sizes.', 'True');
+    ('Media queries in CSS are used for making web pages responsive to different screen sizes.', 'True'),
     ('JavaScript is a scripting language used for adding interactivity to web pages.', 'True'),
     ('JavaScript code can only be executed on the server-side.', 'False'),
     ('JavaScript variables must be declared using the "var" keyword.', 'False'),

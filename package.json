@@ -21,6 +21,7 @@
   "devDependencies": {
     "dotenv": "^16.3.1",
     "morgan": "^1.10.0",
+    "supertest": "^6.3.3",
     "vitest": "^0.34.6"
   }
 }

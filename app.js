@@ -24,6 +24,18 @@ app.get("/quiz/:id", async function (req, res) {
   res.status(200).json({ status: "success", data: question });
 });
 
+/**
+ * Useful for checking whether the server itself is running and can provide a simple response to a simple request.
+ */
+app.get("/api/health", (req, res) => {
+  res.json({
+    success: true,
+    payload: "API is running correctly",
+  });
+});
+
 app.listen(PORT, function () {
   console.log("Port is running");
 });
+
+export default app;
