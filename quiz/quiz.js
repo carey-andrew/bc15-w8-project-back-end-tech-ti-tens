@@ -9,3 +9,13 @@ export async function getQuestionById(id) {
   // Then return the result contain the the question and answer by selected id
   return result.rows[0] || null;
 }
+
+//create a function to return all questions
+export async function getAllQuestions() {
+  // Define query that returns a question from the quiz table - store in a variable
+  const queryText = "SELECT * FROM quiz";
+  // Send request to database by using the pool object using ID as parameter to prevent SQL injection
+  const result = await pool.query(queryText);
+  // Then return the result contain the the question and answer by selected id
+  return result.rows || null;
+}
