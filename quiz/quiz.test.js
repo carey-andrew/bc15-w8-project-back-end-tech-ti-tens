@@ -39,14 +39,15 @@ test("/quiz/:id", async () => {
   // await resetDatabase();
   const response = await request(app).get("/quiz/8");
   // .set("Accept", "application/json");
-  console.log(response.body);
+  console.log(response.body.status);
 
   expect(response.status).toEqual(200);
-  // // Assert response header - should be JSON
-  // expect(response.get("content-type")).toMatch(/json/);
-
-  // // Check the structure and data types of the response
-  // expect(response.body.status).toEqual("success");
-  // expect(response.body.data.id).toBeTypeOf(Number);
-  // expect(response.body.data.statement).toBeString();
+  // Assert response header - should be JSON
+  expect(response.get("content-type")).toMatch(/json/);
+  // Check the structure and data types of the response
+  expect(response.body).toBeTypeOf("object")
+  expect(response.body.status).toEqual("success");
+  expect(typeof response.body.data.id).toEqual("number");
+  expect(typeof response.body.data.statement).toEqual("string");
+  expect(typeof response.body.data.answer).toEqual("string");
 });
