@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "start": "node app.js",
-    "dev": "nodemon -r dotenv/config app.js",
+    "dev": "nodemon -r dotenv/config server.js",
     "reset-database": "node -r dotenv/config db/scripts/reset-database.js"
   },
   "keywords": [],
