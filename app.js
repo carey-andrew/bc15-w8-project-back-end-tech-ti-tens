@@ -28,7 +28,7 @@ app.get("/quiz/:id", async function (req, res) {
   }
   res.status(200).json({ status: "success", data: question });
 });
-// Endpoint to retrieve a all questions 
+// Endpoint to retrieve a all questions
 app.get("/quiz/", async function (req, res) {
   const allQuestions = await getAllQuestions();
   res.status(200).json({ status: "success", data: allQuestions });
