@@ -1,7 +1,7 @@
 // import test
 import { test, expect } from "vitest";
 
-import app from "../app.js";
+import { app } from "../app.js";
 
 // import Supertest function and call it request
 import request from "supertest";
